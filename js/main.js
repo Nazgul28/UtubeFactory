@@ -1,14 +1,43 @@
-// $(function () {
-	console.log("Hi there")
+$(document).ready(function(){
+	console.log('doc ok');
+
+$('#tweet-search').submit(function(){
+
+	var search_term = {
+		q: "buceta"
+	};
+	search(search_term);
+
+});
+
+});
 
 
-for (var i =10; i>0; i--){
-	if (i%3 == 0) {
-		document.write("fizz");
-	} else if (i%5 == 0){
-		document.write("buzz");
+
+	function search(search_term) {
+		console.log('searching ...');
+		console.dir(search_term);
+
+		var search_term = '';
+		var desireSearch = $ ('#tag').val();
+
+		$.ajax({
+			method: 'GET',
+			url: 'http://search.twitter.com/search.json?' + desireSearch, 
+			dataType: 'jsonp',
+})
+		.done(function(results){
+            var result = results.data;
+            console.log(result);
+
+});
+
 	}
-	else {
-	document.write(i);
-}
-}
+	
+
+
+
+
+
+		
+
