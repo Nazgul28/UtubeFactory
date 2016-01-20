@@ -4,7 +4,7 @@ $(document).ready(function(){
 $('#tweet-search').submit(function(){
 
 	var search_term = {
-		q: "buceta"
+		q: "teste"
 	};
 	search(search_term);
 
