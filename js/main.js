@@ -1,43 +1,50 @@
-$(document).ready(function(){
-	console.log('doc ok');
 
-$('#tweet-search').submit(function(){
+$(function () {
 
-	var search_term = {
-		q: "teste"
-	};
-	search(search_term);
-
-});
-
-});
+  console.log('hi');
+  
+  $('#utube-search').submit(function(event){
+   event.preventDefault();
 
 
+   console.log('hi there');
 
-	function search(search_term) {
-		console.log('searching ...');
-		console.dir(search_term);
 
-		var search_term = '';
-		var desireSearch = $ ('#tag').val();
-
-		$.ajax({
+   var artist = $('#utube-name').val();
+   var results = {};
+   var newLine = '';
+$.ajax({
 			method: 'GET',
-			url: 'http://search.twitter.com/search.json?' + desireSearch, 
-			dataType: 'jsonp',
-})
-		.done(function(results){
-            var result = results.data;
-            console.log(result);
+			url: 'https://www.googleapis.com/youtube/v3/search', 
+		data: { 
+			part : 'contentDetails',
+			forUsername: 'channelName',
+			key: 'AIzaSyBw9-Bc4ManXYbSKxaYgbHtgYC8mRtW-sg'
+		},
+			dataType: 'jsonp'
+	})
 
+   .done(function(results){
+            // var result = results.data;
+            console.log(results);
+
+            $(results.results).each(function(index,value) {
+              console.log(value, results);
+
+          });  
+
+        });
 });
+})
 
-	}
+
+
+
+
+
+
+
+
+
+
 	
-
-
-
-
-
-		
-
