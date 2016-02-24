@@ -17,7 +17,7 @@ $.ajax({
 			method: 'GET',
 			url: 'https://www.googleapis.com/youtube/v3/search', 
 		data: { 
-			part : 'contentDetails',
+			part : 'snippet',
 			forUsername: 'channelName',
 			key: 'AIzaSyBw9-Bc4ManXYbSKxaYgbHtgYC8mRtW-sg'
 		},
