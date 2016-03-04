@@ -46,4 +46,34 @@ table {
   border-spacing: 0; }
 
 h1 {
-  color: green; }
+  color: green;
+  text-transform: uppercase; 
+  text-align: center;
+  padding-top: 25px;
+  font-size: 22px;
+}
+
+.grid{
+  color: red;
+  text-align: center;
+  padding-top: 35px;
+}
+
+#utube-search {
+  padding-top: 25px;
+}
+
+#utube_name{
+  width: 200px;
+}
+
+footer{
+  text-align: center;
+  padding-top: 100px;
+}
+
+.credits{
+  padding-top: 20px;
+}
+
+
